@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Task_Management_App',
-    'rest_framework'
+    'rest_framework',
+    'customUser',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +91,7 @@ DATABASES = {
 }
 
 
-AUTH_USER_MODEL = 'Task_Management_App.CustomUser'
+AUTH_USER_MODEL = 'customUser.CustomUser'
 
 
 # Password validation
