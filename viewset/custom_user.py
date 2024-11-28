@@ -11,7 +11,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import action
 
 class UserViewSet(ViewSet):
-    ...
+
+
 
     @action(detail=False, methods=['post'], permission_classes=[AllowAny])
     def register(self, request):
@@ -31,6 +32,8 @@ class UserViewSet(ViewSet):
             return Response({
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
+                'message': f"Welcome, {user.username}!"
+
             })
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
